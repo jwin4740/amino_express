@@ -4,7 +4,7 @@ var aminoAcidArray = [{
 	tripleLetterSymbol: "ala",
 	singleLetterSymbol: "A",
 	molecularWeight: 89.10,
-	molecularFormula: C3H7NO2, 
+	molecularFormula: "C3H7NO2", 
 	essential: "non-essential",
 	hydrophobicity: "hyrophobic",
 	pKa: 2.34,
@@ -18,7 +18,7 @@ var aminoAcidArray = [{
 	tripleLetterSymbol: "arg",
 	singleLetterSymbol: "R",
 	molecularWeight: 174.20,
-	molecularFormula: C6H14N4O2, 
+	molecularFormula: "C6H14N4O2", 
 	essential: "non-essential",
 	hydrophobicity: "hyrophilic",
 	pKa: 2.17,
@@ -27,3 +27,5 @@ var aminoAcidArray = [{
 	skeletalImage: "arginineskeleton.png",
 	ballStickImage: "argininestick.png"
 }];
+
+module.exports = aminoAcidArray;

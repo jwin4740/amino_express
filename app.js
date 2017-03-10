@@ -9,29 +9,19 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-
+var routes = require('./routes/routeIndex.js');
 var port = 3000;
 //Routes
 
 //home
 
-app.get('/', function (request, response) {
-	response.render("home", {
-		tagline : "Let's build a protein"
-	});
-});
+app.get('/', routes.home);
 
 // allows user to type in a number in the url (which is optional because question mark)
 	// the user input is stored in the episodeNumber variable
-app.get('/amino_acids/:amino_acid?', function (request, response) {
-	var aminoAcid = request.params.amino_acid;
-	response.send("This is the page for amino acid info " + aminoAcid);
-});
-
+app.get('/amino_acids/:amino_acid?', routes.amino_acid);
 // NOT FOUND (don't need an 'if statement' because requests execute functions sequentially)
-app.get('*', function (request, response) {
-	response.send("<h1> 404 Page not found </h1");
-});
+app.get('*', routes.notFound);
 
 app.listen(port, function () {
 	console.log("Server is listening on http://localhost:%s", port);
