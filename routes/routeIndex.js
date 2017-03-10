@@ -6,7 +6,7 @@ exports.home = function (request, response) {
 	});
 };
 
-
+aminoArray[0].name = "alanine"
 // allows user to type in a number in the url (which is optional because question mark)
 	// the user input is stored in the episodeNumber variable
 exports.amino_acid = function (request, response) {
