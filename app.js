@@ -1,6 +1,6 @@
 // require express module
 var express = require('express');
-
+var path = require('path');
 // new instance of express
 var app = express();
 
@@ -9,7 +9,8 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.use(express.static('public')) //needed to render static files
+// app.use(express.static('public')); //needed to render static files
+app.use(express.static(path.join(__dirname, 'public')));
 var routes = require('./routes/routeIndex.js');
 var port = 3000;
 //Routes
