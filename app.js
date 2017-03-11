@@ -9,6 +9,7 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+app.use(express.static('public')) //needed to render static files
 var routes = require('./routes/routeIndex.js');
 var port = 3000;
 //Routes
